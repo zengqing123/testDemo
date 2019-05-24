@@ -21,7 +21,7 @@ import java.lang.reflect.Proxy;
  * @version 1.0.0<br />
  */
 @Component
-public class TestBean implements BeanPostProcessor {
+public class TestProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         Class beanClass = bean.getClass();

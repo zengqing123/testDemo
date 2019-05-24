@@ -15,17 +15,20 @@ import com.example.testDemo.test.io.IOTest;
  */
 public class TestMain {
     public static void main(String[] args){
+        String a = "a";
+        String b = "a";
+        System.out.println(a==b);
 
-        IOTest test = new IOTest();
-        test.saveDataToFile("测试","今飞是");
-        int[] rs = new int[10];
-        System.out.println("排序前：");
-        for (int a = 0;a < rs.length;a++){
-            int num = new Double(Math.random() * 100).intValue();
-            rs[a] = num;
-            System.out.print(num+"  ");
-        }
-        mergeSort(rs);
+//        IOTest test = new IOTest();
+//        test.saveDataToFile("测试","今飞是");
+//        int[] rs = new int[10];
+//        System.out.println("排序前：");
+//        for (int a = 0;a < rs.length;a++){
+//            int num = new Double(Math.random() * 100).intValue();
+//            rs[a] = num;
+//            System.out.print(num+"  ");
+//        }
+//        mergeSort(rs);
     }
     public static void mergeSort(int[] nums) {
         System.out.println();
