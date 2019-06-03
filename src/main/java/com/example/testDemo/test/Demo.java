@@ -39,7 +39,6 @@ public class Demo {
 	 */
 	
 	public static void main(String[] args) {
-		
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 0, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(5));
 		Thread thread = null;
@@ -50,7 +49,6 @@ public class Demo {
 		}
 		System.out.println("个数"+executor.getPoolSize()+"等待数："+executor.getQueue().size()+"执行完的："+executor.getCompletedTaskCount());
 		executor.shutdown();
-
 	}
 
 }

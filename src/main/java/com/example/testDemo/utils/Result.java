@@ -18,7 +18,7 @@ public class Result extends HashMap<String, Object> {
 	}
 
 	public static Result error() {
-		return error(500, "未知异常，请联系管理员");
+		return error(500, "未知异常，详情见控制台");
 	}
 	
 	public static Result error(String msg) {
