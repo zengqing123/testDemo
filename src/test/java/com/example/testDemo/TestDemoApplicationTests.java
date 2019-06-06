@@ -1,7 +1,6 @@
 package com.example.testDemo;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.testDemo.config.MqSender;
 import com.example.testDemo.entity.Entity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,8 +18,8 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TestDemoApplicationTests {
-	@Autowired
-	private MqSender sender;
+//	@Autowired
+//	private MqSender sender;
 
 	@Test
 	public void contextLoads() {
@@ -57,9 +56,9 @@ public class TestDemoApplicationTests {
         return returnstr;
     }
 
-	@Test
-	public void hello() throws Exception {
-		sender.sendMsg("123");
-	}
+//	@Test
+//	public void hello() throws Exception {
+//		sender.sendMsg("123");
+//	}
 
 }
