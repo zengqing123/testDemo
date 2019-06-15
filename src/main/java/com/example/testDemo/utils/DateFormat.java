@@ -20,9 +20,13 @@ public class DateFormat {
 	
 	public DateFormat(){}
 	
-	public static synchronized SimpleDateFormat getNewDateFormat(){
+	public static SimpleDateFormat getNewDateFormat(){
 				if (format == null) {
-					format = new SimpleDateFormat("yyyy-MM-dd");
+                    synchronized(DateFormat.class){
+                        if (format == null){
+                            format = new SimpleDateFormat("yyyy-MM-dd");
+                        }
+                    }
 				}
 		return format;
 	}

@@ -1,7 +1,10 @@
 package com.example.testDemo;
 
 import com.alibaba.fastjson.JSONObject;
+<<<<<<< HEAD
 //import com.example.testDemo.config.MqSender;
+=======
+>>>>>>> origin/master
 import com.example.testDemo.entity.Entity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
