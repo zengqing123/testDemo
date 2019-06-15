@@ -1,6 +1,18 @@
 package com.example.testDemo.test.io;
 
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
 
 /**
  * <b>类   名：</b>IOTest<br/>
@@ -63,5 +75,29 @@ public class IOTest {
             }
         }
         System.out.println("文件写入成功！");
+
+
+
     }
+
+    //读取二维码内容案例
+    public static void main(String args[]){
+        MultiFormatReader multiFormatReader=new MultiFormatReader();
+        HashMap hints=new HashMap();
+        hints.put(EncodeHintType.CHARACTER_SET,"GBK");
+        try{
+            URL url = new URL("http://api.smalltadpole.com:8870/otcAPI/QRImg/Payee/394E878CA593424E91AFCD5D9A6917CA.png");
+            URLConnection con = url.openConnection();
+            InputStream stream = con.getInputStream();
+            BufferedImage source= ImageIO.read(stream);
+            BinaryBitmap binaryImg=new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(source)));
+            Result result=multiFormatReader.decode(binaryImg,hints);
+            System.out.println("内容为："+result.getText());
+        }catch (Exception e){
+
+        }
+
+    }
+
+
 }
