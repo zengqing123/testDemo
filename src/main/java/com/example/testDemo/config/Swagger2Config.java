@@ -1,6 +1,7 @@
 package com.example.testDemo.config;
 
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -22,7 +23,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.testDemo.api"))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 //.basePackage("com.example.testDemo.api")按照包路径创建接口文档 
                 //.withMethodAnnotation(ApiOperation.class) 按照注解创建接口文档 
                 .paths(PathSelectors.any())

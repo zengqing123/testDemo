@@ -17,7 +17,6 @@ import java.sql.SQLException;
 
 @SpringBootApplication
 @EnableScheduling
-@MapperScan("com.example.testDemo.dao")
 @EnableAsync
 public class Application extends SpringBootServletInitializer {
 

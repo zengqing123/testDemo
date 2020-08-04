@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.testDemo.dao.BizCaseCheckMapper">
+
+        <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.testDemo.entity.BizCaseCheck">
+            <id column="id" property="id"/>
+            <result column="case_no" property="caseNo"/>
+            <result column="case_name" property="caseName"/>
+            <result column="event_no" property="eventNo"/>
+            <result column="scene_id" property="sceneId"/>
+            <result column="case_level" property="caseLevel"/>
+            <result column="case_type" property="caseType"/>
+            <result column="alarm_pic" property="alarmPic"/>
+            <result column="camera_id" property="cameraId"/>
+            <result column="license" property="license"/>
+            <result column="create_id" property="createId"/>
+            <result column="create_time" property="createTime"/>
+            <result column="update_id" property="updateId"/>
+            <result column="update_time" property="updateTime"/>
+            <result column="note" property="note"/>
+            <result column="check_id" property="checkId"/>
+            <result column="check_status" property="checkStatus"/>
+            <result column="check_time" property="checkTime"/>
+            <result column="pd_id" property="pdId"/>
+            <result column="case_remarks" property="caseRemarks"/>
+    </resultMap>
+
+        <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, case_no, case_name, event_no, scene_id, case_level, case_type, alarm_pic, camera_id, license, create_id, create_time, update_id, update_time, note, check_id, check_status, check_time, pd_id, case_remarks
+    </sql>
+        <select id="getList" resultType="com.example.testDemo.entity.BizCaseCheck">
+            select * from biz_case_check limit 0,11
+        </select>
+
+
+    <select id="selectLists" resultType="com.example.testDemo.entity.BizCaseCheck">
+        select * from biz_case_check limit 0,11
+    </select>
+
+
+</mapper>
